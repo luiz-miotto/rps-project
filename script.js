@@ -27,27 +27,43 @@ function playerInputCapitalizer(playerInput){
     
     }
 
-let playerSelection = playerInputCapitalizer("paper");
+let playerSelection = playerInputCapitalizer("Rock");
 let computerSelection = computerPlay();
 
+
+function playRound(playerSelection, computerSelection){
 if (playerSelection==="Rock" && computerSelection==="Scissors"){
-    console.log(`${playerSelection} beats ${computerSelection}. You win!`)
+    return roundCounter=`${playerSelection} beats ${computerSelection}. You win!`;
 } else if ( playerSelection==="Rock" && computerSelection==="Rock"){
-    console.log(`${playerSelection} ties ${computerSelection}. You tied!`)
+    return roundCounter=`${playerSelection} ties ${computerSelection}. You tied!`;
 } else if ( playerSelection==="Rock" &&  computerSelection==="Paper"){
-    console.log(`${computerSelection} beats ${playerSelection}. You lose!`)
+    return roundCounter=`${computerSelection} beats ${playerSelection}. You lose!`;
 } else if ( playerSelection==="Paper" && computerSelection==="Rock"){
-    console.log(`${playerSelection} beats ${computerSelection}. You win!`)
+    return roundCounter=`${playerSelection} beats ${computerSelection}. You win!`;
 } else if (playerSelection==="Paper" && computerSelection==="Paper"){
-    console.log(`${playerSelection} ties with ${computerSelection}. You tied!`)
+    return roundCounter=`${playerSelection} ties with ${computerSelection}. You tied!`;
 } else if (playerSelection==="Paper" && computerSelection==="Scissors"){
-    console.log(`${computerSelection} beats ${playerSelection}. You lose!`)
+    return roundCounter=`${computerSelection} beats ${playerSelection}. You lose!`;
 } else if (playerSelection==="Scissors" && computerSelection==="Paper"){
-    console.log(`${playerSelection} beats ${computerSelection}. You win!`)
+    return roundCounter= `${playerSelection} beats ${computerSelection}. You win!`;
 }  else if (playerSelection==="Scissors" && computerSelection==="Scissors"){
-    console.log(`${playerSelection} ties with ${computerSelection}. You tied!`)
+    return roundCounter=`${playerSelection} ties with ${computerSelection}. You tied!`;
 }  else if (playerSelection==="Scissors" && computerSelection==="Rock"){
-     console.log(`${computerSelection} beats ${playerSelection}. You lose!`)
+     return roundCounter=`${computerSelection} beats ${playerSelection}. You lose!`;
+};
 };
 
+/*
+function game(){ 
+    for (let gameRound = 0; gameRound > 5; gameround++)
+    if
+}
 
+will use function to keep track of string provided byy the playRound string
+
+function playerCounter(){
+    for( let playerPoint==0; playerPoint> 3; playerPoint++){
+
+    }
+}
+*/
