@@ -17,8 +17,8 @@ function computerPlay(){
 
 
 
-function playerInputCapitalizer(playerInput){
-    let string = playerInput;  
+function playerInputCapitalizer(string){
+    string = prompt("Rock, Paper, or Scissors?");
     let first = string.substring(0,1); /// this extracts just the first letter
     let capitalized = first.toUpperCase();  /// this uppercases it
     let rest = string.substring(1); /// this extracts the rest of the string
@@ -27,8 +27,7 @@ function playerInputCapitalizer(playerInput){
     
     }
 
-var playerSelection = playerInputCapitalizer("Rock");
-var computerSelection = computerPlay();
+
 var playerScore = 0;
 var computerScore = 0;
 
@@ -59,7 +58,10 @@ function myGame(playerSelection, computerSelection){
     while (gameRound < 5 ){
         gameRound++;
         roundPlayer = playRound(playerSelection, computerSelection);
-        console.log(playerScore);
+        var playerSelection = playerInputCapitalizer();
+        var computerSelection = computerPlay();
+        console.log(`The player selected ${playerSelection}. The player score is ${playerScore}`);
+        console.log(`The computer selected ${computerSelection}. The computer's score is ${computerScore}`);
     }
 
 }
