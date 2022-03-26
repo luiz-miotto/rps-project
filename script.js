@@ -54,11 +54,10 @@ function announceScore(playerSelection,playerScore,computerSelection,computerSco
     console.log(`The computer selected ${computerSelection}.`);
 }
 */
-
+var playerScore = 0;
+var computerScore = 0;
 
         function playRound(playerSelection, computerSelection){
-            let playerScore = 0;
-            let computerScore = 0;
             if (playerSelection=="Rock" && computerSelection=="Scissors"){
                  return playerScore = ++playerScore , console.log(`${playerSelection} beats ${computerSelection}. You win! Player: ${playerScore} computer: ${computerScore}`);
             } else if ( playerSelection==="Rock" && computerSelection==="Rock"){
