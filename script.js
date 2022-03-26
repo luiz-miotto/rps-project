@@ -28,28 +28,11 @@ function playerInputCapitalizer(string){
     }
 
 
-var playerScore = 0;
-var computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
+let scoreAnnouncer;
 
 
-/*
-function myGame(playerSelection){ 
-    var gameRound = 0;
-    while (gameRound < 5){
-        playRound(playerSelection, computerSelection);
-        gameRound++;
-    }
-};
-*/
-
-
-/*
-function myGame(playerSelection, computerSelection){ 
-    for (let gameRound=0, playerScore=0, computerScore=0; gameRound > 5 || playerScore>3 || computerScore>3; gameRound++){
-   return playRound(playerSelection, computerSelection);
-    }
-
-*/
 
 
 function myGame(playerSelection, computerSelection){
@@ -60,19 +43,21 @@ function myGame(playerSelection, computerSelection){
         roundPlayer = playRound(playerSelection, computerSelection);
         var playerSelection = playerInputCapitalizer();
         var computerSelection = computerPlay();
-        console.log(`The player selected ${playerSelection}. The player score is ${playerScore}`);
-        console.log(`The computer selected ${computerSelection}. The computer's score is ${computerScore}`);
+        scoreAnnouncer = announceScore(playerSelection,playerScore,computerSelection,computerScore); 
     }
 
 }
 
-
+function announceScore(playerSelection,playerScore,computerSelection,computerScore){
+    console.log(`The player selected ${playerSelection}. The player score is ${playerScore}`);
+    console.log(`The computer selected ${computerSelection}. The computer's score is ${computerScore}`);
+}
 
 
 
         function playRound(playerSelection, computerSelection){
-            if (playerSelection==="Rock" && computerSelection==="Scissors"){
-                return roundCounter=`${playerSelection} beats ${computerSelection}. You win!`, ++playerScore;
+            if (playerSelection=="Rock" && computerSelection=="Scissors"){
+                return playerScore++;
             } else if ( playerSelection==="Rock" && computerSelection==="Rock"){
                 return roundCounter=`${playerSelection} ties ${computerSelection}. You tied!`;
             } else if ( playerSelection==="Rock" &&  computerSelection==="Paper"){
