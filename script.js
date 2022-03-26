@@ -28,8 +28,7 @@ function playerInputCapitalizer(string){
     }
 
 
-let playerScore = 0;
-let computerScore = 0;
+
 let scoreAnnouncer;
 
 
@@ -38,30 +37,34 @@ let scoreAnnouncer;
 function myGame(playerSelection, computerSelection){
     var gameRound = 0;
     var roundPlayer; 
+   
     while (gameRound < 5 ){
         gameRound++;
         roundPlayer = playRound(playerSelection, computerSelection);
         var playerSelection = playerInputCapitalizer();
         var computerSelection = computerPlay();
-        scoreAnnouncer = announceScore(playerSelection,playerScore,computerSelection,computerScore); 
+        
     }
 
 }
 
+/*
 function announceScore(playerSelection,playerScore,computerSelection,computerScore){
-    console.log(`The player selected ${playerSelection}. The player score is ${playerScore}`);
-    console.log(`The computer selected ${computerSelection}. The computer's score is ${computerScore}`);
+    console.log(`The player selected ${playerSelection}. `);
+    console.log(`The computer selected ${computerSelection}.`);
 }
-
+*/
 
 
         function playRound(playerSelection, computerSelection){
+            let playerScore = 0;
+            let computerScore = 0;
             if (playerSelection=="Rock" && computerSelection=="Scissors"){
-                return playerScore++;
+                 return playerScore = ++playerScore , console.log(`${playerSelection} beats ${computerSelection}. You win! Player: ${playerScore} computer: ${computerScore}`);
             } else if ( playerSelection==="Rock" && computerSelection==="Rock"){
-                return roundCounter=`${playerSelection} ties ${computerSelection}. You tied!`;
+                console.log(`${playerSelection} ties ${computerSelection}. You tied! Player: ${playerScore} computer: ${computerScore}.`) ;
             } else if ( playerSelection==="Rock" &&  computerSelection==="Paper"){
-                return roundCounter=`${computerSelection} beats ${playerSelection}. You lose!`, ++computerScore;
+                return ++computerScore, console.log(`${computerSelection} beats ${playerSelection}. You lose! Player: ${playerScore} computer: ${computerScore}`);
             } else if ( playerSelection==="Paper" && computerSelection==="Rock"){
                 return roundCounter=`${playerSelection} beats ${computerSelection}. You win!`, ++playerScore;
             } else if (playerSelection==="Paper" && computerSelection==="Paper"){
@@ -76,16 +79,13 @@ function announceScore(playerSelection,playerScore,computerSelection,computerSco
                 return roundCounter=`${computerSelection} beats ${playerSelection}. You lose!`, ++computerScore;
             };
         };
-
-
-
-
-
-
 /*
-function playerCounter(){
-    for( let playerPoint==0; playerPoint> 3; playerPoint++){
-
+function roundEvaluator(roundWinner,playerWon, computerWon){
+    if (roundWinner == playerWon) {
+        playerScore++;
     }
-}
+}0
 */
+
+
+
