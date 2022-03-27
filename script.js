@@ -60,12 +60,7 @@ function winDeterminer(playerScore,computerScore){
     }
 }
 
-/*
-function announceScore(playerSelection,playerScore,computerSelection,computerScore){
-    console.log(`The player selected ${playerSelection}. `);
-    console.log(`The computer selected ${computerSelection}.`);
-}
-*/
+
 var playerScore = 0;
 var computerScore = 0;
 
@@ -90,13 +85,7 @@ var computerScore = 0;
                 return ++computerScore, console.log(`${computerSelection} beats ${playerSelection}. You lose! Player: ${playerScore} computer: ${computerScore}`);
             };
         };
-/*
-function roundEvaluator(roundWinner,playerWon, computerWon){
-    if (roundWinner == playerWon) {
-        playerScore++;
-    }
-}0
-*/
+
 
 
 
