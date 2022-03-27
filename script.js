@@ -38,11 +38,14 @@ function myGame(playerSelection, computerSelection){
     var gameRound = 0;
     var roundPlayer; 
    
-    while (gameRound < 5 ){
-        gameRound++;
-        roundPlayer = playRound(playerSelection, computerSelection);
+    while (gameRound < 5 && playerScore < 3 && computerScore < 3){
+        
+        
         var playerSelection = playerInputCapitalizer();
         var computerSelection = computerPlay();
+        gameRound++;
+        console.log(`gameRound is ${gameRound}`);
+        roundPlayer = playRound(playerSelection, computerSelection);
         
     }
 
@@ -65,17 +68,17 @@ var computerScore = 0;
             } else if ( playerSelection==="Rock" &&  computerSelection==="Paper"){
                 return ++computerScore, console.log(`${computerSelection} beats ${playerSelection}. You lose! Player: ${playerScore} computer: ${computerScore}`);
             } else if ( playerSelection==="Paper" && computerSelection==="Rock"){
-                return roundCounter=`${playerSelection} beats ${computerSelection}. You win!`, ++playerScore;
+                return playerScore = ++playerScore , console.log(`${playerSelection} beats ${computerSelection}. You win! Player: ${playerScore} computer: ${computerScore}`);
             } else if (playerSelection==="Paper" && computerSelection==="Paper"){
-                return roundCounter=`${playerSelection} ties with ${computerSelection}. You tied!`;
+                console.log(`${playerSelection} ties ${computerSelection}. You tied! Player: ${playerScore} computer: ${computerScore}.`) ;
             } else if (playerSelection==="Paper" && computerSelection==="Scissors"){
-                return roundCounter=`${computerSelection} beats ${playerSelection}. You lose!`, ++computerScore;
+                return ++computerScore, console.log(`${computerSelection} beats ${playerSelection}. You lose! Player: ${playerScore} computer: ${computerScore}`);
             } else if (playerSelection==="Scissors" && computerSelection==="Paper"){
-                return roundCounter= `${playerSelection} beats ${computerSelection}. You win!`, ++playerScore;
+                return playerScore = ++playerScore , console.log(`${playerSelection} beats ${computerSelection}. You win! Player: ${playerScore} computer: ${computerScore}`);
             }  else if (playerSelection==="Scissors" && computerSelection==="Scissors"){
-                return roundCounter=`${playerSelection} ties with ${computerSelection}. You tied!`;
+                console.log(`${playerSelection} ties ${computerSelection}. You tied! Player: ${playerScore} computer: ${computerScore}.`) ;
             }  else if (playerSelection==="Scissors" && computerSelection==="Rock"){
-                return roundCounter=`${computerSelection} beats ${playerSelection}. You lose!`, ++computerScore;
+                return ++computerScore, console.log(`${computerSelection} beats ${playerSelection}. You lose! Player: ${playerScore} computer: ${computerScore}`);
             };
         };
 /*
