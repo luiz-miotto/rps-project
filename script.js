@@ -46,9 +46,18 @@ function myGame(playerSelection, computerSelection){
         gameRound++;
         console.log(`gameRound is ${gameRound}`);
         roundPlayer = playRound(playerSelection, computerSelection);
+        gameWinner = winDeterminer(playerScore,computerScore);
         
     }
 
+}
+
+function winDeterminer(playerScore,computerScore){
+    if (playerScore === 3){
+        console.log(`Player has ${playerScore} points. The player wins!`);
+    } else if (computerScore === 3){
+        console.log(`Computer has ${computerScore} points. The computer wins!`)
+    }
 }
 
 /*
