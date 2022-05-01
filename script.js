@@ -3,7 +3,7 @@ var gameRound = 0;
 var playerScore = 0;
 var computerScore = 0;
 
-
+var winnerScore = "The text here will change once a winner has been determined.";
 
 const roundDisplay = document.querySelector('#roundDisplay');
 roundDisplay.textContent = "This is where the round score goes";
@@ -12,8 +12,9 @@ var changeRound = roundDisplay.textContent;
 const scoreDisplay = document.querySelector('#scoreDisplay');       
 scoreDisplay.textContent = "Display player score here!";
 
+const winGameDisplayer = document.querySelector('#gameWinDisplay'); 
+winGameDisplayer.textContent = winnerScore;
 
-var testVariable = "Hello, this is my  variable.";
 var roundScoreResults;
 
 
@@ -22,6 +23,9 @@ function roundScoreDisplayer(){
     roundDisplay.textContent = roundScoreResults;
 }
 
+function gameWinDisplayer(){
+ winGameDisplayer.textContent = winnerScore;
+};
 
 
 const paperButton = document.querySelector('#paperButton');
@@ -92,10 +96,12 @@ function myGame(playerSelection){       //  #1 this initiates the game
 
 
 function winDeterminer(playerScore,computerScore){  /// #3.3 calculates who won the game based on the amounts of round won
-    if (playerScore === 5){
-        console.log(`Player has ${playerScore} points. The player wins!`);
-    } else if (computerScore === 5){
-        console.log(`Computer has ${computerScore} points. The computer wins!`)
+    if (playerScore == 5){
+       winnerScore = `Player has ${playerScore} points. The player wins!`;
+       return gameWinDisplayer();
+    } else if (computerScore == 5){
+         winnerScore = `Computer has ${computerScore} points. The computer wins!`;
+         return gameWinDisplayer();
     }
 }
 
